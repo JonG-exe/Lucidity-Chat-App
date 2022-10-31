@@ -1,17 +1,14 @@
 {
-  "name": "tailwind-learning",
+  "name": "lucidity-chat-app",
   "version": "1.0.0",
-  "description": "Finally learning tailwind from a youtube tutorial",
+  "description": "My first Chat App without web sockets",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./input.css -o ./css/main.css",
-    "watch": "npx tailwindcss -i ./input.css -o ./css/main.css --watch"
+    
   },
   "author": "Jon.G",
   "license": "ISC",
-  "devDependencies": {
-    "tailwindcss": "^3.2.1"
-  },
+  "devDependencies": {},
   "dependencies": {
     "mongoose": "^6.7.0"
   }

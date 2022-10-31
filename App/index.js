@@ -1,6 +1,7 @@
 const 
     Message = require("./models/Message")
     mongoose = require("mongoose"),
+    path = require("path")
     cors = require("cors"),
     express = require("express"),
     app = express(),
@@ -46,7 +47,8 @@ app.use(
 );
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.static("public"))
+// app.use(express.static("public"))
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get("/", (req, res) => {

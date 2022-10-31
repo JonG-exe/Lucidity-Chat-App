@@ -1,6 +1,7 @@
 const 
     Message = require("./models/Message")
     mongoose = require("mongoose"),
+    cors = require("cors"),
     express = require("express"),
     app = express(),
     PORT = process.env.PORT || 5000;
@@ -38,6 +39,7 @@ messageEventEmitter.on("change", (change => {
  * ================================= Express ========================================
  */
 
+app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static("../client/public"))

@@ -69,7 +69,7 @@ app.get("/test", (req, res) => {
     res.json({test: "this is a json test string"})
 })
 
-app.post("/", (req, res) => {
+app.post("/add", (req, res) => {
 
     const newMessage = new Message({
         message: req.body.message,

@@ -47,7 +47,7 @@ form.addEventListener("submit", (event) => {
 
     event.preventDefault()
 
-    fetch("/", {
+    fetch("/add", {
         method: "POST",
 
         body: JSON.stringify({

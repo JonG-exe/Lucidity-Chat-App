@@ -47,16 +47,18 @@ app.get("/", (req, res) => {
     res.render("index.html")
 })
 
-app.get("/loadMessages", (req, res) => {
+app.get("/loadmessages", (req, res) => {
     Message.find({})
     .then(data => res.json(data))
 })
 
 app.get("/newmessage", (req, res) => {
-
     let data = tempNewMessageObj
     res.json(data)
+})
 
+app.get("/test", (req, res) => {
+    res.json({test: "this is a json test string"})
 })
 
 app.post("/", (req, res) => {

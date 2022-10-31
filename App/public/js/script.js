@@ -3,7 +3,7 @@ const testMessage = document.querySelector(".testMessage")
 
 // https://server-lucidity-chat-app.vercel.app
 
-fetch("https://server-lucidity-chat-app.vercel.app/loadmessages")
+fetch("/loadmessages")
     .then(data => data.json())
     .then(data => data.forEach(messageObj => {
         console.log(messageObj.message)
@@ -20,7 +20,7 @@ let prevMessage = undefined
 
 setInterval(() => {
 
-    fetch("https://server-lucidity-chat-app.vercel.app/newmessage")
+    fetch("/newmessage")
     .then(data => data.json())
     .then(data => {
 
@@ -47,7 +47,7 @@ form.addEventListener("submit", (event) => {
 
     event.preventDefault()
 
-    fetch("https://server-lucidity-chat-app.vercel.app", {
+    fetch("/", {
         method: "POST",
 
         body: JSON.stringify({

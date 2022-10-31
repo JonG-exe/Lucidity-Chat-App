@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "My first Chat App without web sockets",
   "main": "index.js",
-  "scripts": {
-    
-  },
+  "scripts": {},
   "author": "Jon.G",
   "license": "ISC",
   "devDependencies": {},

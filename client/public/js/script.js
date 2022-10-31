@@ -32,7 +32,7 @@ setInterval(() => {
     .catch(e => {
         // console.log("Empty string received.")
     })
-}, 100)
+}, 1000)
 
 
 /*--------------------------------------------------*/

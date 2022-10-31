@@ -7,7 +7,7 @@ const
     PORT = process.env.PORT || 5000;
 
 /**
- * ================================= Mongoose ========================================
+ * ================================= Mongoose ======================================== /
  */
 
 mongoose.connect(
@@ -36,13 +36,17 @@ messageEventEmitter.on("change", (change => {
 
 
 /**
- * ================================= Express ========================================
+ * ================================= Express ======================================== /
  */
 
-app.use(cors());
+app.use(
+    cors({
+        origin: "*"
+    })
+);
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.static("../client/public"))
+app.use(express.static("public"))
 
 
 app.get("/", (req, res) => {

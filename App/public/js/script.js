@@ -1,12 +1,15 @@
 const test = document.querySelector(".test")
 const testMessage = document.querySelector(".testMessage")
 
-fetch("https://server-lucidity-chat-app.vercel.app/loadmessages")
+// https://server-lucidity-chat-app.vercel.app
+
+fetch("http://localhost:5000/loadmessages")
     .then(data => data.json())
     .then(data => data.forEach(messageObj => {
         console.log(messageObj.message)
     
         appendMessage(messageObj.message)
+        test.scrollTo(0, test.scrollHeight);
     }))
 
 /*--------------------------------------------------*/
@@ -17,7 +20,7 @@ let prevMessage = undefined
 
 setInterval(() => {
 
-    fetch("https://server-lucidity-chat-app.vercel.app/newmessage")
+    fetch("http://localhost:5000/newmessage")
     .then(data => data.json())
     .then(data => {
 
@@ -29,10 +32,9 @@ setInterval(() => {
         prevMessage = data.message
 
     })
-    .catch(e => {
-        // console.log("Empty string received.")
-    })
-}, 1000)
+    .catch(e => {})
+
+}, 500)
 
 
 /*--------------------------------------------------*/
@@ -45,7 +47,7 @@ form.addEventListener("submit", (event) => {
 
     event.preventDefault()
 
-    fetch("https://server-lucidity-chat-app.vercel.app", {
+    fetch("http://localhost:5000", {
         method: "POST",
 
         body: JSON.stringify({
